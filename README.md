@@ -12,7 +12,7 @@ Developed for the **AI for Healthcare** curriculum.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 - **Clinical Decision Support:** High-sensitivity `RandomForestClassifier` trained on the Pima Indians Diabetes Database, optimized with `GridSearchCV` 5-fold cross-validation prioritizing **Recall** to minimize false negatives.
 - **Explainable AI (SHAP):**
@@ -30,56 +30,56 @@ Developed for the **AI for Healthcare** curriculum.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 DiaLogix/
-├── README.md                   # System documentation & setup guide
-├── requirements.txt            # Dependency list
-├── seed_admin.py               # Administrator account seeding script
-├── app.py                      # Portal entry point (Login/Register & Routing)
-├── ui_common.py                # Shared clinical UI tokens, theme, and PDF generator
+├── README.md                    # System documentation & setup guide
+├── requirements.txt             # Dependency list
+├── seed_admin.py                # Administrator account seeding script
+├── app.py                       # Portal entry point (Login/Register & Routing)
+├── ui_common.py                 # Shared clinical UI tokens, theme, and PDF generator
 │
 ├── data/
-│   ├── diabetes.csv            # Raw Pima Indians Diabetes dataset
-│   └── download_data.py        # Automated dataset verification script
+│   ├── diabetes.csv             # Raw Pima Indians Diabetes dataset
+│   └── download_data.py         # Automated dataset verification script
 │
 ├── notebooks/
 │   └── 01_eda_and_training.ipynb # Exploratory data analysis & experiments
 │
 ├── ml/
-│   ├── preprocess.py           # Zero-handling & training-median imputation
-│   ├── train.py                # Pipeline: GridSearchCV, evaluation, SHAP artifacts
-│   ├── predict.py              # Validation, inference, risk bands, recommendations
-│   └── explain.py              # Local & global SHAP attributions and plotting
+│   ├── preprocess.py            # Zero-handling & training-median imputation
+│   ├── train.py                 # Pipeline: GridSearchCV, evaluation, SHAP artifacts
+│   ├── predict.py               # Validation, inference, risk bands, recommendations
+│   └── explain.py               # Local & global SHAP attributions and plotting
 │
 ├── artifacts/
-│   ├── model.joblib            # Trained Random Forest model
-│   ├── imputer.joblib          # Pickled training medians
-│   ├── medians.json            # JSON training medians
-│   ├── explainer.joblib        # SHAP TreeExplainer
-│   ├── metrics.json            # Test-set Recall, Accuracy, ROC-AUC, Confusion Matrix
-│   └── global_shap.png         # High-resolution global beeswarm plot
+│   ├── model.joblib             # Trained Random Forest model
+│   ├── imputer.joblib           # Pickled training medians
+│   ├── medians.json             # JSON training medians
+│   ├── explainer.joblib         # SHAP TreeExplainer
+│   ├── metrics.json             # Test-set Recall, Accuracy, ROC-AUC, Confusion Matrix
+│   └── global_shap.png          # High-resolution global beeswarm plot
 │
 ├── db/
-│   ├── schema.sql              # SQLite schema (users & predictions tables)
-│   └── database.py             # Parameterized CRUD operations & analytics queries
+│   ├── schema.sql               # SQLite schema (users & predictions tables)
+│   └── database.py              # Parameterized CRUD operations & analytics queries
 │
 ├── auth/
-│   └── auth.py                 # Bcrypt hashing, sessions, and role guards
+│   └── auth.py                  # Bcrypt hashing, sessions, and role guards
 │
 └── pages/
-    ├── 1_Predict.py            # User: Input form + result + SHAP + PDF report
-    ├── 2_My_History.py         # User: Past predictions log & re-inspection
-    ├── 3_About_Model.py        # User: Model specs, metrics, global SHAP, limits
-    ├── 4_Admin_Dashboard.py    # Admin: Analytics, timelines, risk distribution
-    ├── 5_Admin_Users.py        # Admin: Account directory, activation, password reset
-    └── 6_Admin_Predictions.py  # Admin: Full database audit & CSV export
+    ├── 1_Predict.py             # User: Input form + result + SHAP + PDF report
+    ├── 2_My_History.py          # User: Past predictions log & re-inspection
+    ├── 3_About_Model.py         # User: Model specs, metrics, global SHAP, limits
+    ├── 4_Admin_Dashboard.py     # Admin: Analytics, timelines, risk distribution
+    ├── 5_Admin_Users.py         # Admin: Account directory, activation, password reset
+    └── 6_Admin_Predictions.py   # Admin: Full database audit & CSV export
 ```
 
 ---
 
-## 🚀 Quickstart Guide
+## Quickstart Guide
 
 ### 1. Installation
 
@@ -130,7 +130,7 @@ Open your browser at `http://localhost:8501`.
 
 ---
 
-## 🧪 Clinical Validation & Input Ranges
+## Clinical Validation & Input Ranges
 
 The prediction form enforces physiological validation ranges:
 
@@ -147,13 +147,13 @@ The prediction form enforces physiological validation ranges:
 
 ### Risk Tiers
 
-- 🟢 **Low Risk:** Predicted probability &lt; 30%
-- 🟡 **Moderate Risk:** Predicted probability 30% – 60%
-- 🔴 **High Risk:** Predicted probability &gt; 60%
+- **Low Risk:** Predicted probability &lt; 30%
+- **Moderate Risk:** Predicted probability 30% – 60%
+- **High Risk:** Predicted probability &gt; 60%
 
 ---
 
-## 🔒 Security Architecture
+## Security Architecture
 
 - **Bcrypt Hashing:** Passwords are never stored in plaintext; all authentication is verified via salted bcrypt hashes.
 - **SQL Injection Prevention:** 100% of SQLite database transactions execute through parameterized queries.
@@ -162,6 +162,6 @@ The prediction form enforces physiological validation ranges:
 
 ---
 
-## ⚠️ Medical & Educational Disclaimer
+## Medical & Educational Disclaimer
 
 > **IMPORTANT:** This application is built strictly for **educational and research demonstration purposes** in an AI for Healthcare course. It does **not** constitute medical advice, diagnosis, or clinical recommendation. All health and treatment decisions must be made in consultation with a qualified medical professional.
